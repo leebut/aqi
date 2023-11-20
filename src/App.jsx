@@ -1,3 +1,5 @@
+// The project code can be found on my Github repositiry at
+// https://github.com/leebut/aqi
 import { useEffect, useState } from "react";
 import "./App.css";
 import { data } from "autoprefixer";
@@ -47,6 +49,7 @@ export default function App() {
   async function getAqiData(placeId) {
     try {
       setIsLoading(true);
+      setError("");
       const res = await fetch(`${rootUrl}place_id=${placeId}&${types}`, {
         headers: {
           Authorization: `${aqiKey}`,
@@ -66,7 +69,6 @@ export default function App() {
       setError(err.message);
     } finally {
       setIsLoading(false);
-      setError("");
     }
   }
 
@@ -238,14 +240,18 @@ function Box({ children }) {
 function Loading() {
   return (
     <>
-      <h1 className="text-slate-200 text-4xl font-bold">LOADING...</h1>
+      <h1 className="text-slate-200 text-4xl font-bold">
+        <span>💾</span> LOADING...
+      </h1>
     </>
   );
 }
 function ErrorMessage({ message }) {
   return (
     <>
-      <h1 className="text-2xl text-red-700">{message}</h1>
+      <h1 className="text-2xl text-red-700">
+        <span>⛔</span> {message}
+      </h1>
     </>
   );
 }
@@ -258,7 +264,7 @@ function AqiList({ aqiData, query }) {
     return (
       <>
         <h1 className="text-slate-200 text-4xl font-bold">
-          No data for this location
+          <span>🙅‍♂️</span>No data for this location. <span>🙅‍♀️</span>
         </h1>
       </>
     );
