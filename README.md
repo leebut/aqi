@@ -1,9 +1,12 @@
 # Air Quality API Project
 
 I am learning React from Jonas Steadman on Udemy.  
-This app uses the _Air Matters_ API ([https://dev.air-matters.com](https://dev.air-matters.com)) for data fetching and displaying it to users.
+This app uses the _Air Matters_ API ([https://dev.air-matters.com](https://dev.air-matters.com)).
 
-**This project uses Vite**.
+### Dependencies
+
+- Vite
+- tailwindscss - postcss - autoprefixer
 
 ## Usage
 
