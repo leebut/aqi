@@ -47,14 +47,25 @@ export default function App() {
 
   // This function is called by the effect that takes the state: placeId
   async function getAqiData(placeId) {
+    const url =
+      "https://corsproxy.io/?" +
+      encodeURIComponent(
+        `https://api.air-matters.app/current_air_condition?place_id=${placeId}&${types}`
+      );
+
     try {
       setIsLoading(true);
       setError("");
-      const res = await fetch(`${rootUrl}place_id=${placeId}&${types}`, {
+      const res = await fetch(url, {
         headers: {
           Authorization: `${aqiKey}`,
         },
       });
+      // const res = await fetch(`${rootUrl}place_id=${placeId}&${types}`, {
+      //   headers: {
+      //     Authorization: `${aqiKey}`,
+      //   },
+      // });
 
       if (!res.ok) throw new Error("Something went wrong fetching data.");
 
@@ -89,14 +100,16 @@ export default function App() {
       setError("");
       try {
         setFindingPlaces(true);
-        const res = await fetch(
-          `https://api.air-matters.app/place_search?lang=en&content=${query}`,
-          {
-            headers: {
-              Authorization: `${aqiKey}`,
-            },
-          }
-        );
+        const url =
+          "https://corsproxy.io/?" +
+          encodeURIComponent(
+            `https://api.air-matters.app/place_search?lang=en&content=${query}`
+          );
+        const res = await fetch(url, {
+          headers: {
+            Authorization: `${aqiKey}`,
+          },
+        });
         if (!res.ok) throw new Error("Something went wrong fetching places.");
 
         const data = await res.json();
