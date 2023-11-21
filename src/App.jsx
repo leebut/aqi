@@ -9,7 +9,7 @@ const aqiKey = import.meta.env.VITE_AQI_TOKEN;
 
 export default function App() {
   // Difine states
-  const rootUrl = "https://api.air-matters.app/current_air_condition?";
+  // const rootUrl = "https://api.air-matters.app/current_air_condition?";
   const types = "lang=en&standard=aqi_us";
 
   const [query, setQuery] = useState("");
