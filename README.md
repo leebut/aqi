@@ -3,6 +3,10 @@
 I am learning React from Jonas Schmedtmann on Udemy.  
 This app uses the _Air Matters_ API ([https://dev.air-matters.com](https://dev.air-matters.com)).
 
+### Project URL
+
+[https://aqiapp.netlify.app/](https://aqiapp.netlify.app/)
+
 ### Dependencies
 
 - Vite
@@ -22,4 +26,5 @@ I was disturbed by CORS errors, but after searching, I discovered [https://corsp
 
 ## NOTES
 
+For now, I'm concered with data fetching and dealing with it rather than focus on the UI. Later, I'll improve the UI and make it responsive.
 Since I am learning, there may be parts of the code that I have not implemented correctly.
