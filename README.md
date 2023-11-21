@@ -18,7 +18,7 @@ Click on the box and click on the location you want to see the data for.
 
 ## CORS
 
-I was disturned by CORS errors, but after searching, I discovered [https://corsproxy.io](https://corsproxy.io). When I learn more, I'll look into implementing my own CORS handler.
+I was disturbed by CORS errors, but after searching, I discovered [https://corsproxy.io](https://corsproxy.io). When I learn more, I'll look into implementing my own CORS handler.
 
 ## NOTES
 
